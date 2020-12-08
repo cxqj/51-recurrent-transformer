@@ -434,21 +434,21 @@ def get_args():
     parser.add_argument("--num_attention_heads", type=int, default=12)
     parser.add_argument("--memory_dropout_prob", type=float, default=0.1)
     parser.add_argument("--initializer_range", type=float, default=0.02)
-    parser.add_argument("--glove_path", type=str, default=None, help="extracted GloVe vectors")
-    parser.add_argument("--freeze_glove", action="store_true", help="do not train GloVe vectors")
+    parser.add_argument("--glove_path", type=str, default=None, help="extracted GloVe vectors")  
+    parser.add_argument("--freeze_glove", action="store_true", help="do not train GloVe vectors")  
     parser.add_argument("--share_wd_cls_weight", action="store_true",
                         help="share weight matrix of the word embedding with the final classifier, ")
 
-    parser.add_argument("--recurrent", action="store_true", help="Run recurrent model")
+    parser.add_argument("--recurrent", action="store_true", help="Run recurrent model")  # MART
     parser.add_argument("--untied", action="store_true", help="Run untied model")
     parser.add_argument("--xl", action="store_true", help="transformer xl model, when specified, "
                                                           "will automatically set recurrent = True, "
-                                                          "since the data loading part is the same")
+                                                          "since the data loading part is the same")   # transformer-XL
     parser.add_argument("--xl_grad", action="store_true",
                         help="enable back-propagation for xl model, only useful when `-xl` flag is enabled."
-                             "Note, the original transformerXL model does not allow back-propagation.")
+                             "Note, the original transformerXL model does not allow back-propagation.")  #允许反向传播的transformer-XL 
     parser.add_argument("--mtrans", action="store_true",
-                        help="Masked transformer model for single sentence generation")
+                        help="Masked transformer model for single sentence generation")  # masked_transformer
 
     # training config -- learning rate
     parser.add_argument("--lr", type=float, default=1e-4)
