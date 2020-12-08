@@ -460,3 +460,4 @@ def single_sentence_collate(batch):
                    } for e in batch]  # change key
     padded_batch = step_collate([e[0] for e in batch])
     return padded_batch, None, batch_meta
+
