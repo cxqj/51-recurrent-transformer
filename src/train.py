@@ -423,7 +423,7 @@ def get_args():
     parser.add_argument("--max_v_len", type=int, default=100, help="max length of video feature")
     parser.add_argument("--max_t_len", type=int, default=25,
                         help="max length of text (sentence or paragraph), 30 for anet, 20 for yc2")
-    parser.add_argument("--max_n_sen", type=int, default=6,
+    parser.add_argument("--max_n_sen", type=int, default=6,  # maximum number of video segments to 6 for ActivityNet Captions and 12 for YouCookII.
                         help="for recurrent, max number of sentences, 6 for anet, 10 for yc2")
     parser.add_argument("--n_memory_cells", type=int, default=1, help="number of memory cells in each layer")
     parser.add_argument("--type_vocab_size", type=int, default=2, help="video as 0, text as 1")
